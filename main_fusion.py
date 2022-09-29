@@ -13,6 +13,7 @@ mat = scipy.io.loadmat('/home/mallejac/Documents/Stage 3A/f130803t01p00r15rdn_re
 IHS = mat.get("img")
 IHS_lamdas = mat.get("lambdas")
 
+# img = IHS
 img = IHS[0:-1:4,0:-1:4,:]
 img = img[:,:,8:]
 img = img / np.max(img)
@@ -63,3 +64,6 @@ ax2.imshow(Ip.torgb(yh_interpo))
 ax2.set_title('Image interpo RGB')
 ax3.imshow(img_fused)
 ax3.set_title('Image fused RGB')
+
+plt.colorbar
+plt.show()
