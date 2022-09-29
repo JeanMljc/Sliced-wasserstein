@@ -126,3 +126,9 @@ def torgb(im):
     b = b / np.max(b)
     Irgb = np.dstack((r,g,b))
     return Irgb
+
+def MSE_image(x,y):
+    r"""
+    Mean Squared error between image x and image y
+    """
+    return np.sum((x-y)**2)

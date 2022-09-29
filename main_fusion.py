@@ -1,4 +1,5 @@
 import numpy as np
+import ot 
 import scipy.io
 import matplotlib.pyplot as plt
 
@@ -41,13 +42,14 @@ Del_e = SW.mat_delta(lc,lp,12)
 ### Fusion ###
 
 n_pro = 10
-n_steps = 1000
-tau = 10
+n_steps = 10
+tau = 50
 
 X_n,D,GN = fusion_SW.fuse_ope(Yh,Ym,X0,lc,lp,n_pro,n_steps,tau)
 
 img_final = X_n
 img_fused = Ip.torgb(img_final)
+img_clean = img_final[:-2]
 
 ### Plot RGB image ###
 
@@ -67,3 +69,26 @@ ax3.set_title('Image fused RGB')
 
 plt.colorbar
 plt.show()
+
+### Plot RGB histogram ###
+
+colors = ['r','g','b']
+
+fig, ax = plt.subplots(3,figsize=(10,10))
+ax[0].hist(Ip.im2mat(Ip.torgb(X_perf)).T,bins=np.arange(0,1.1,0.05), color=colors, stacked=1)
+ax[0].set_title("X_perf")
+ax[1].hist(Ip.im2mat(Ip.torgb(yh_interpo)).T,bins=np.arange(0,1.1,0.05), color=colors, stacked=1)
+ax[1].set_title("yh_interpo")
+ax[2].hist(Ip.im2mat(img_fused).T,bins=np.arange(0,1.1,0.05), color=colors, stacked=1)
+ax[2].set_title("img_fused")
+plt.show()
+
+### Metrics ###
+
+Pro = ot.sliced.get_random_projections(183,100).T
+
+print("Sliced WD(X0,X_perfect)",SW.Sliced_WD(yh_interpo,X_perf,lc,lp,Pro))
+print("Sliced WD(X_n,X_perfect)",SW.Sliced_WD(img_clean,X_perf,lc,lp,Pro))
+
+print("Norm2(X0,X_perfect)",Ip.MSE_image(yh_interpo,X_perf))
+print("Norm2(X_n,X_perfect)",Ip.MSE_image(img_clean,X_perf))
