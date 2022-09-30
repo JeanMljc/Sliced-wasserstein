@@ -7,6 +7,7 @@ import Sliced_Wasserstein as SW
 import image_proscess as Ip
 import operators as Op
 import fusion_SW
+import metrics
 
 ### retrieval of HS image ###
 
@@ -70,6 +71,11 @@ ax3.set_title('Image fused RGB')
 plt.colorbar
 plt.show()
 
+plt.plot(D,label='SWD')
+plt.legend()
+plt.title('SWD')
+plt.show()
+
 ### Plot RGB histogram ###
 
 colors = ['r','g','b']
@@ -92,3 +98,16 @@ print("Sliced WD(X_n,X_perfect)",SW.Sliced_WD(img_clean,X_perf,lc,lp,Pro))
 
 print("Norm2(X0,X_perfect)",Ip.MSE_image(yh_interpo,X_perf))
 print("Norm2(X_n,X_perfect)",Ip.MSE_image(img_clean,X_perf))
+
+v_ssim = metrics.SSIM(X_perf,img_clean)
+
+plt.plot(v_ssim)
+plt.title("SSIM index")
+plt.xlabel("spectral band l")
+plt.show()
+
+img_SAM = metrics.SAM(img_clean,X_perf)
+
+plt.imshow(img_SAM)
+plt.colorbar()
+plt.show()
