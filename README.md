@@ -14,6 +14,8 @@ Spatial and spectral degradation operators $S$ and $L$ are used with Gaussian bl
 An image with $d$ spectral bands can be see as a point cloud distribution in a $d$-dimensional space.
 
 ![boat3](boat3.jpg)
+
+For instance, a RGB image is equivalent to a 3-D points cloud distribution. 
 ![RGB_points](RGB_points.png) 
 
 ## Sliced-Wasserstein distance 
