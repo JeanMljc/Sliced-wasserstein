@@ -4,11 +4,11 @@ This code implement an algorithm for fusion between hyperspectral and multispect
 
 ## Inverse Problem framework 
 
-The goal of fusion is to retrieve image $\hat{X} \in \mathbb{R}^{l_h\times p_m}$ in the hight spatial and spectral dimension space from $Y_m \in \mathbb{R}^{l_m\times p_m}$ the multispectral image and $Y_h \in \mathbb{R}^{l_h\times p_h}$ the hyperspectral image.  
+The goal of fusion is to retrieve image $\hat{X} \in \mathbb{R}^{l_h\times p_m}$ in the hight spatial and spectral dimension space from $Y_m \in \mathbb{R}^{l_m\times p_m}$ the multispectral image and $Y_h \in \mathbb{R}^{l_h\times p_h}$ the hyperspectral image. In order to solve this inverse problem, we compute a Wasserstein barycenter between hyperspectral and multispectral information:
 
-$$\hat{X} = \operatorname*{argmin}_{X \in \mathbb{R}^{l_h\times p_m}} \frac{1}{2} \big\{ \widehat{SW_2}(Y_m,L X)^2 + \widehat{SW_2}(Y_h,X B S)^2 \big\}.$$
+$$\hat{X} = \operatorname*{argmin}_{X \in \mathbb{R}^{l_h\times p_m}} \frac{1}{2} \{ \widehat{SW_2}(Y_m,L X)^2 + \widehat{SW_2}(Y_h,X B S)^2 \}.$$
 
-In order to solve this inverse problem, we compute a Wasserstein barycenter between hyperspectral and multispectral information.
+A gradient descent is used to do the minimisation. It is implemented in the function fusion_SW.py
 
 ## Sliced-Wasserstein distance 
 
@@ -20,6 +20,8 @@ With $\mu$ and $\nu$ two distribution with support $U$ and $V$ respectively.
 The gradient has the following expression:
 
 $$ \forall i \in [1,n], \qquad \frac{\partial \widehat{SW_2}(\mu,\nu)^{2}}{\partial U_i}=\frac{2}{|\Psi|} \sum_{\theta \in \Psi}\left\langle U_{i}-V_{s_{\theta}^{\star}(i)}, \theta\right\rangle \theta,$$
+with $s_{\theta}^{\star}$ the optimal permutation
+
 
 @inproceedings{peyré,
   TITLE = {{Wasserstein Regularization of Imaging Problems}},
