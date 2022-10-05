@@ -17,7 +17,7 @@ $$\mu = \frac{1}{n} \sum_{k = 1}^{n} \delta_{U_k}\quad \nu = \frac{1}{n} \sum_{k
 
 ![boat3](/figures/boat3.jpg)
 
-For instance, a RGB image is equivalent to a 3-D points cloud distribution. 
+For instance, a RGB image is equivalent to a 3-D points cloud distribution ($d=3$). 
 ![RGB_points](/figures/RGB_points.png) 
 
 ## Sliced-Wasserstein distance 
