@@ -1,6 +1,6 @@
 # Fusion with Sliced-Wasserstein Distance 
 
-This code implement an algorithm for fusion between hyperspectral and multispectral images. 
+This code implement an algorithm for fusion between hyperspectral and multispectral images. The hyperspectral image img_HS.npy is a $128\times 128$ image with $183$ spectral bands.
 
 ## Inverse Problem framework 
 
@@ -11,7 +11,9 @@ $$\hat{X} = \operatorname*{argmin}_{X \in \mathbb{R}^{l_h\times p_m}} \frac{1}{2
 Spatial and spectral degradation operators $S$ and $L$ are used with Gaussian blur operator $B$. A gradient descent is used to do the minimisation. It is implemented in the function fusion_SW.py
 ## Image view as a point cloud distribution
 
-An image with $d$ spectral bands can be see as a point cloud distribution in a $d$-dimensional space.
+An image with $d$ spectral bands can be see as a point cloud distribution in a $d$-dimensional space. A point cloud distribution of $n$ element noted $\mu$ is a uniform distribution with a support $U_{i \in \llbracket 1,n \rrbracket} \in \mathbb{R}^{d}$
+
+$$\mu = \frac{1}{n} \sum_{k = 1}^{n} \delta_{U_k}\quad \nu = \frac{1}{n} \sum_{k = 1}^{n} \delta_{V_k}$$
 
 ![boat3](/figures/boat3.jpg)
 
