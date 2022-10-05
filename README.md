@@ -32,7 +32,7 @@ $$ \forall i \in [1,n], \qquad \frac{\partial \widehat{SW_2}(\mu,\nu)^{2}}{\part
 
 with $s_{\theta}^{\star}$ the optimal permutation. $s_v, s_u \in \Sigma_{n}$ denote the permutations that order the value of $\langle U_i | \theta \rangle$ and $\langle V_i | \theta \rangle$ respectively. Thoses equations are implemented in the file Sliced_Wasserstein.py
 
-
+## References
 @inproceedings{peyré,
   TITLE = {{Wasserstein Regularization of Imaging Problems}},
   AUTHOR = {Rabin, Julien and Peyr{\'e}, Gabriel},
