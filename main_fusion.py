@@ -37,8 +37,8 @@ Del_e = SW.mat_delta(lc,lp,12)
 ### Fusion ###
 
 n_pro = 10
-n_steps = 10
-tau = 50
+n_steps = 1000
+tau = 10
 
 X_n,D,GN = fusion_SW.fuse_ope(Yh,Ym,X0,lc,lp,n_pro,n_steps,tau)
 
