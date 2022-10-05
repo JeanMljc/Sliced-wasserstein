@@ -11,13 +11,7 @@ import metrics
 
 ### retrieval of HS image ###
 
-mat = scipy.io.loadmat('/home/mallejac/Documents/Stage 3A/f130803t01p00r15rdn_refl_img_corr_roi2_denoised.mat')
-IHS = mat.get("img")
-IHS_lamdas = mat.get("lambdas")
-
-# img = IHS
-img = IHS[0:-1:4,0:-1:4,:]
-img = img[:,:,8:]
+img = np.load("img_HS.npy")
 img = img / np.max(img)
 
 N = 128
