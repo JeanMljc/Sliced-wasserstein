@@ -49,3 +49,17 @@ with $s_{\theta}^{\star}$ the optimal permutation. $s_v, s_u \in \Sigma_{n}$ den
 }
 
 @article{flamary2021pot, author = {R{'e}mi Flamary and Nicolas Courty and Alexandre Gramfort and Mokhtar Z. Alaya and Aur{'e}lie Boisbunon and Stanislas Chambon and Laetitia Chapel and Adrien Corenflos and Kilian Fatras and Nemo Fournier and L{'e}o Gautheron and Nathalie T.H. Gayraud and Hicham Janati and Alain Rakotomamonjy and Ievgen Redko and Antoine Rolet and Antony Schutz and Vivien Seguy and Danica J. Sutherland and Romain Tavenard and Alexander Tong and Titouan Vayer}, title = {POT: Python Optimal Transport}, journal = {Journal of Machine Learning Research}, year = {2021}, volume = {22}, number = {78}, pages = {1-8}, url = {http://jmlr.org/papers/v22/20-451.html} }
+
+@inproceedings{mifdal:hal-01620601,
+  TITLE = {{HYPERSPECTRAL AND MULTISPECTRAL WASSERSTEIN BARYCENTER FOR IMAGE FUSION}},
+  AUTHOR = {Mifdal, Jamila and Coll, Bartomeu and Courty, Nicolas and Froment, Jacques and Vedel, B{\'e}atrice},
+  URL = {https://hal.science/hal-01620601},
+  BOOKTITLE = {{IGARSS 2017}},
+  ADDRESS = {Houston, United States},
+  YEAR = {2017},
+  MONTH = Jul,
+  KEYWORDS = {Optimal Transport ; Wasser- stein Barycenter ; Image Fusion},
+  PDF = {https://hal.science/hal-01620601/file/fusion.pdf},
+  HAL_ID = {hal-01620601},
+  HAL_VERSION = {v1},
+}
