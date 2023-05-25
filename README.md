@@ -28,7 +28,7 @@ $$ \widehat{SW_2}(\mu,\nu)^2 = \frac{1}{|\Psi|}\sum_{\theta \in \Psi} W_2(U_{|\t
 
 with $\mu$ and $\nu$ two distribution with support $U$ and $V$ respectively. $\Psi$ is a unit sphere of dimension $d$ and $W_2(\cdot,\cdot)$ the Wasserstein distance. The gradient has the following expression:
 
-$$ \forall i \in \llbracket 1,n \rrbracket, \qquad \frac{\partial \widehat{SW_2}(\mu,\nu)^{2}}{\partial U_i}=\frac{2}{|\Psi|} \sum_{\theta \in \Psi}\left\langle U_{i}-V_{s_{\theta}^{\star}(i)}, \theta\right\rangle \theta, $$
+$$ \forall i \in \llbracket 1, n \rrbracket, \qquad \frac{\partial \widehat{SW_2}(\mu,\nu)^{2}}{\partial U_i}=\frac{2}{|\Psi|} \sum_{\theta \in \Psi}\left\langle U_{i}-V_{s_{\theta}^{\star}(i)}, \theta\right\rangle \theta, $$
 
 with $s_{\theta}^{\star}$ the optimal permutation. $s_v, s_u \in \Sigma_{n}$ denote the permutations that order the value of $\langle U_i | \theta \rangle$ and $\langle V_i | \theta \rangle$ respectively. Thoses equations are implemented in the file Sliced_Wasserstein.py
 
